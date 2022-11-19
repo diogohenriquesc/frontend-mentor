@@ -1,0 +1,201 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+:root {
+  --pmr-dark-blue: hsl(233, 47%, 7%);
+  --pmr-dark-blue-desaturated: hsl(244, 38%, 16%);
+  --pmr-soft-violet: hsl(277, 64%, 61%);
+
+  --ntr-white: hsl(0, 0%, 100%);
+  --ntr-white-light: hsla(0, 0%, 100%, 0.75);
+  --ntr-white-lighter: hsla(0, 0%, 100%, 0.6);
+
+  --font1: 'Inter', sans-serif;
+  --font2: 'Lexend Deca', sans-serif;
+}
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: var(--pmr-dark-blue);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding-block: 3rem;
+}
+
+.card__container {
+  background-color: var(--pmr-dark-blue-desaturated);
+  width: min(90%, 60rem);
+  margin-inline: auto;
+  border-radius: .6rem;
+  overflow: hidden;
+  color: var(--ntr-white);
+  text-align: center;
+  font-family: var(--font1);
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+}
+
+.card__img {
+  position: relative;
+  background-image: url('../images/image-header-mobile.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.card__img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--pmr-soft-violet);
+  mix-blend-mode: multiply;
+}
+
+.card__info {
+  padding: 2rem;
+}
+
+.info__title {
+  font-size: 1.7rem;
+  line-height: 1.2;
+}
+
+.info__title span {
+  color: var(--pmr-soft-violet);
+}
+
+.info__desc {
+  color: var(--ntr-white-light);
+  line-height: 1.7;
+  font-size: .9375rem;
+  padding-block: 1rem;
+}
+
+.card__stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.stats__value {
+  font-weight: 700;
+  font-size: 1.6rem;
+  padding-bottom: .2rem;
+}
+
+.stats__desc {
+  font-family: var(--font2);
+  text-transform: uppercase;
+  color: var(--ntr-white-lighter);
+  letter-spacing: 2px;
+  font-size: .8rem;
+}
+
+@media screen and (min-width: 769px) {
+  .card__container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+
+
+  .card__img {
+    order: 1;
+    background-image: url('../images/image-header-desktop.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .card__info {
+    flex: 1;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4rem 5rem 4rem 4rem;
+  }
+
+  .card__stats {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+}

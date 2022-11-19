@@ -1,0 +1,140 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: #0d192b;
+}
+
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+    height: fit-content;
+    background: rgb(20, 37, 61);
+    padding: 1.5rem;
+    border-radius: 15px;
+}
+
+.card__img {
+    position: relative;
+    overflow: hidden;
+}
+
+.card__img::after {
+    content: '';
+    background: hsla(178, 100%, 50%, .5) url('../images/icon-view.svg');
+    background-repeat: no-repeat;
+    background-position: center; 
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 4px;
+    left: 0;
+    border-radius: 15px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.card__img:hover::after {
+    opacity: 1;
+}   
+
+.card__img img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.card__name a {
+    display: inline-block;
+    color: white;
+    font-weight: 600;
+    margin: 1rem 0;
+    text-decoration: none;
+}
+
+.card__name a:hover {
+    color: hsl(178, 100%, 50%);
+}
+
+.card__desc {
+    color: hsl(215, 51%, 70%);
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 24px;
+    padding-bottom: 1rem;
+}
+
+.card__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid hsl(215, 32%, 27%);
+    padding-bottom: 25px;
+}
+
+.card__price,
+.card__time {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.card__price {
+    color: hsl(178, 100%, 50%);
+    font-weight: 600;
+}
+
+.card__time {
+    color: hsl(215, 51%, 70%);
+}
+
+.card__author {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: hsl(215, 51%, 70%);
+}
+
+.card__author img {
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.card__author .card__link {
+    text-decoration: none;
+    color: white;
+}
+
+.card__author .card__link:hover {
+    color: hsl(178, 100%, 50%);
+}
+
+.attribution {
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+}
+
+.attribution a {
+    color: hsl(178, 100%, 50%);
+    text-decoration: none;
+}
+
+

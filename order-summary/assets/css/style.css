@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+:root {
+  --font-size: 62.5%;
+  --font: 'Red Hat Display', sans-serif;
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  padding: 2rem;
+  background: var(--pale-blue) url('../images/pattern-background-desktop.svg');
+  background-size: 100% 50vmin;
+  background-repeat: no-repeat;
+  background-position: top;
+  font-family: var(--font);
+}
+
+.container {
+  max-width: 37.5rem;
+  background: white;
+  border-radius: 1.4rem;
+  overflow: hidden;
+  box-shadow: .3rem .3rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+.container__img {
+  background: url('../images/illustration-hero.svg');
+  background-size: cover;
+  background-position: center;
+  height: 18rem;
+}
+
+.container__content {
+  text-align: center;
+  padding: 4rem;
+}
+
+.container__title {
+  font-weight: 900;
+}
+
+.container__desc {
+  color: var(--desaturated-blue);
+  line-height: 2.6rem;
+  padding: 1.6rem 0;
+}
+
+.container__plan {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--very-pale-blue);
+  padding: 2.2rem 1.6rem;
+  border-radius: 1.4rem;
+  gap: 1.5rem;
+}
+
+.container__plan img {
+  width: 4rem;
+}
+
+.container__plan-details {
+  margin-right: auto;
+}
+
+.container__plan-details p {
+  font-weight: 900;
+}
+
+.container__plan-details span {
+  color: var(--desaturated-blue);
+  font-size: 1.4rem;
+}
+
+.container__link {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--bright-blue);
+  transition: all .4s ease;
+}
+
+.plan__link {
+  font-size: 1.4rem;
+  text-decoration: underline;
+}
+
+.plan__link:hover {
+  text-decoration: none;
+}
+
+.payment__link {
+  display: block;
+  background: var(--bright-blue);
+  color: white;
+  padding: 1.4rem 0;
+  border-radius: 1.2rem;
+  margin: 2rem 0;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.4);
+  font-weight: 700;
+}
+
+.payment__link:hover {
+  background: var(--dark-blue);
+  transform: scale(1.05);
+}
+
+.cancel__link {
+  color: var(--desaturated-blue);
+  font-weight: 900;
+}
+
+.cancel__link:hover {
+  color: black;
+}
+
+@media (max-width: 50rem) {
+  body {
+    background: var(--pale-blue) url('../images/pattern-background-mobile.svg');
+    background-size: 100% 50vmin;
+    background-repeat: no-repeat;
+    background-position: top;
+  }
+
+  .container__content {
+    padding: 2.5rem;
+  }
+}

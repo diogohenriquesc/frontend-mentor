@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Intro component with sign up form</title>
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+  <main class="container">
+    <section class="section__info">
+      <h1>Learn to code by watching others</h1>
+      <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.</p>
+    </section>
+
+    <section class="section__form">
+
+      <div class="form__plan">
+        <p><span>Try it free 7 days</span> then $20/mo. thereafter</p>
+      </div>
+
+      <form class="form" action="/">
+        <div class="input-field">
+          <input type="text" placeholder="First Name" id="first-name">
+          <label class="hide" for="first-name">Fist Name cannot be empty</label>
+          <img class="error-img hide" src="./assets/images/icon-error.svg" alt="" aria-hidden="true">
+        </div>
+
+        <div class="input-field">
+          <input type="text" placeholder="Last Name" id="last-name">
+          <label class="hide" for="last-name">Last Name cannot be empty</label>
+          <img class="error-img hide" src="./assets/images/icon-error.svg" alt="" aria-hidden="true">
+        </div>
+
+        <div class="input-field">
+          <input type="email" placeholder="Email Address" id="email">
+          <label class="hide" for="email">Looks like this is not an email</label>
+          <img class="error-img hide" src="./assets/images/icon-error.svg" alt="" aria-hidden="true">
+        </div>
+
+        <div class="input-field">
+          <input type="password" placeholder="Password" id="password">
+          <label class="hide" for="password">Password cannot be empty</label>
+          <img class="error-img hide" src="./assets/images/icon-error.svg" alt="" aria-hidden="true">
+        </div>
+
+        <input type="submit" value="CLAIM YOUR FREE TRIAL">
+
+        <p class="form__message">By clicking the button, you are agreeing to our <a href="/">Terms and Services</a></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="./assets/js/app.js"></script>
+
+</body>
+</html>
