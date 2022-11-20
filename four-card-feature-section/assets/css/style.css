@@ -1,0 +1,234 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root {
+  --pmr-red: hsl(0, 78%, 62%);
+  --pmr-cyan: hsl(180, 62%, 55%);
+  --pmr-orange: hsl(34, 97%, 64%);
+  --pmr-blue: hsl(212, 86%, 64%);
+
+  --ntl-dark-blue: hsl(234, 12%, 34%);
+  --ntl-grayish-blue: hsl(229, 6%, 66%);
+  --ntl-light-gray: hsl(0, 0%, 98%);
+
+  --font-f: 'Poppins', sans-serif;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: var(--ntl-light-gray);
+  font-family: var(--font-f);
+}
+
+.main__wrapper {
+  width: min(80%, 70rem);
+  margin-inline: auto;
+  padding-block: 4rem;
+}
+
+.m-header {
+  text-align: center;
+}
+
+.m-header__title {
+  color: var(--ntl-dark-blue);
+}
+
+.m-header__title span {
+  font-weight: 300;
+}
+
+.m-header__paragraph {
+  color: var(--ntl-grayish-blue);
+  padding-top: 1rem;
+  padding-bottom: 5rem;
+  font-size: .9375rem;
+}
+
+.cards__wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
+  grid-template-areas:
+    'c1'
+    'c2'
+    'c3'
+    'c4';
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: white;
+  border-radius: .5rem;
+  padding: 1.5rem;
+  border-top-width: 5px;
+  border-top-style: solid;
+  box-shadow:
+    0px 0px 3.5px rgba(0, 0, 0, 0.07),
+    0px 0px 7.9px rgba(0, 0, 0, 0.053),
+    0.1px 0.1px 13.8px rgba(0, 0, 0, 0.046),
+    0.1px 0.1px 21.9px rgba(0, 0, 0, 0.04),
+    0.2px 0.2px 33.8px rgba(0, 0, 0, 0.035),
+    0.3px 0.3px 52.8px rgba(0, 0, 0, 0.03),
+    0.5px 0.5px 87.6px rgba(0, 0, 0, 0.024),
+    1px 1px 175px rgba(0, 0, 0, 0.017);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  transition: all .3s ease;
+}
+
+.card-title {
+  color: var(--ntl-dark-blue)
+}
+
+.card-paragraph {
+  color: var(--ntl-grayish-blue);
+  font-size: .8125rem;
+  padding-top: .4rem;
+}
+
+.card-img {
+  padding-top: 2rem;
+  align-self: flex-end;
+}
+
+.c1 {
+  grid-area: c1;
+  border-color: var(--pmr-cyan);
+
+}
+
+.c2 {
+  grid-area: c2;
+  border-color: var(--pmr-red);
+}
+
+.c3 {
+  grid-area: c3;
+  border-color: var(--pmr-orange);
+}
+
+.c4 {
+  grid-area: c4;
+  border-color: var(--pmr-blue);
+}
+
+@media screen and (min-width: 50rem) {
+  .m-header__title {
+    font-size: 2.3rem;
+  }
+
+  .m-header__paragraph {
+    padding-left: 27%;
+    padding-right: 27%;
+  }
+
+  .cards__wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      'c1 c2'
+      'c3 c4'
+    ;
+  }
+
+  .card-img {
+    padding-top: 3rem;
+  }
+}
+
+@media screen and (min-width: 68.75rem) {
+  .m-header__title {
+    font-size: 2.3rem;
+  }
+
+  .m-header__paragraph {
+    padding-left: 27%;
+    padding-right: 27%;
+  }
+
+  .cards__wrapper {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      '. c2 .'
+      'c1 c2 c4'
+      'c1 c3 c4'
+      '. c3 .';
+  }
+}
