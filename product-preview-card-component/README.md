@@ -29,8 +29,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Repository]()
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Repository](https://github.com/diogohenriquesc/frontend-mentor/tree/main/product-preview-card-component)
+- Live Site URL: [Deploy](https://diogohenriquesc.github.io/frontend-mentor/product-preview-card-component)
 
 ## My process
 
